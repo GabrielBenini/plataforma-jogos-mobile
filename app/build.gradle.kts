@@ -57,4 +57,13 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+
+    // Fonts
+
+    implementation("androidx.compose.ui:ui-text-google-fonts:1.6.0") // Use a versão mais recente
+
+    // navigation
+
+    implementation("androidx.navigation:navigation-compose:2.8.0")
+
 }
