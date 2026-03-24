@@ -1,7 +1,6 @@
 package com.gabrielbenini.agigames.feature.tictactoe
 
 import android.annotation.SuppressLint
-import android.widget.Button
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -16,25 +15,24 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.gabrielbenini.agigames.feature.tictactoe.components.TicTacToeButton
-import com.gabrielbenini.agigames.navigation.Routes
 
 @Composable
 fun TicTacToeScreen(
     viewModel: TicTacToeViewModel,
-    navController: NavHostController
+    navController: NavHostController,
+    modifier: Modifier
 ) {
     val uiState = viewModel.uiState.collectAsStateWithLifecycle().value
     val board = uiState.board
     val winningText = uiState.winningText
     Column(
-        modifier = Modifier.fillMaxSize(),
+        modifier = modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
@@ -48,7 +46,7 @@ fun TicTacToeScreen(
                 Text(
                     "x",
                     style = MaterialTheme.typography.headlineLarge,
-                    color = Color.Black
+                    color = MaterialTheme.colorScheme.secondary
                 )
             }
         }
@@ -82,5 +80,5 @@ fun TicTacToeScreen(
 @Preview(showBackground = true)
 @Composable
 private fun TicTacToeScreenPreview() {
-    TicTacToeScreen(viewModel = TicTacToeViewModel(), rememberNavController())
+    TicTacToeScreen(viewModel = TicTacToeViewModel(), rememberNavController(), Modifier)
 }

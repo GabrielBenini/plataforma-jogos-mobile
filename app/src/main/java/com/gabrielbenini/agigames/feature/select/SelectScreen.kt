@@ -13,8 +13,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 
@@ -27,13 +27,14 @@ fun SelectScreen(
 
     ) {
         LazyColumn(
-            modifier = Modifier
+            modifier = modifier
                 .fillMaxWidth()
                 .padding(20.dp)
         ) {
             item{
                 Row(
-                    horizontalArrangement = Arrangement.SpaceBetween
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
                         "Escolha que jogo vc quer",
@@ -45,7 +46,7 @@ fun SelectScreen(
                         Text(
                             "x",
                             style = MaterialTheme.typography.headlineLarge,
-                            color = Color.Black
+                            color = MaterialTheme.colorScheme.secondary
                         )
                     }
                 }
