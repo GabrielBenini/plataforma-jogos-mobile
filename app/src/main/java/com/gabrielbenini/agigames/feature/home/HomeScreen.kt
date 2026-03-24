@@ -117,7 +117,7 @@ fun HomeScreen(
             )
 
             Button(
-                onClick = { navController.navigate(Routes.TICTACTOE) },
+                onClick = { navController.navigate(Routes.SELECT) },
                 contentPadding = PaddingValues(),
                 shape = RoundedCornerShape(12.dp),
                 colors = ButtonDefaults.buttonColors(

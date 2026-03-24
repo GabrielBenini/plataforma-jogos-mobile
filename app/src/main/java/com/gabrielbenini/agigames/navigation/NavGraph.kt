@@ -8,6 +8,7 @@ import androidx.navigation.compose.composable
 import com.gabrielbenini.agigames.feature.tictactoe.TicTacToeScreen
 import com.gabrielbenini.agigames.feature.tictactoe.TicTacToeViewModel
 import com.gabrielbenini.agigames.feature.home.HomeScreen
+import com.gabrielbenini.agigames.feature.select.SelectScreen
 
 @Composable
 fun NavGraph(
@@ -23,6 +24,9 @@ fun NavGraph(
         composable(Routes.TICTACTOE){
             val ticTacToeViewModel: TicTacToeViewModel = viewModel()
             TicTacToeScreen(ticTacToeViewModel, navController)
+        }
+        composable(Routes.SELECT){
+            SelectScreen(navController)
         }
     }
 }
