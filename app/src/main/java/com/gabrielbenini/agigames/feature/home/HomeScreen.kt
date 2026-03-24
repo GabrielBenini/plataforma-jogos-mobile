@@ -1,4 +1,4 @@
-package com.gabrielbenini.agigames.presentation.Home
+package com.gabrielbenini.agigames.feature.home
 
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode
@@ -32,12 +32,15 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.gabrielbenini.agigames.R
+import com.gabrielbenini.agigames.navigation.Routes
 
-@Preview(showBackground = true)
 @Composable
 fun HomeScreen(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    navController: NavHostController
 ) {
 
     val infiniteTransition = rememberInfiniteTransition(label = "gradient")
@@ -114,7 +117,7 @@ fun HomeScreen(
             )
 
             Button(
-                onClick = { /* Sua ação aqui */ },
+                onClick = { navController.navigate(Routes.TICTACTOE) },
                 contentPadding = PaddingValues(),
                 shape = RoundedCornerShape(12.dp),
                 colors = ButtonDefaults.buttonColors(
@@ -153,5 +156,10 @@ fun HomeScreen(
 
         }
     }
+}
 
+@Preview
+@Composable
+private fun HomeScreenPreview() {
+    HomeScreen(Modifier, rememberNavController())
 }
