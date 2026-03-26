@@ -9,6 +9,8 @@ import androidx.navigation.compose.composable
 import com.gabrielbenini.agigames.feature.tictactoe.TicTacToeScreen
 import com.gabrielbenini.agigames.feature.tictactoe.TicTacToeViewModel
 import com.gabrielbenini.agigames.feature.home.HomeScreen
+import com.gabrielbenini.agigames.feature.minesweeper.MinesweeperScreen
+import com.gabrielbenini.agigames.feature.minesweeper.MinesweeperViewModel
 import com.gabrielbenini.agigames.feature.select.SelectScreen
 
 @Composable
@@ -29,6 +31,10 @@ fun NavGraph(
         }
         composable(Routes.SELECT){
             SelectScreen(navController, modifier)
+        }
+        composable(Routes.MINESWEEPER) {
+            val minesweeperViewModel: MinesweeperViewModel = viewModel()
+            MinesweeperScreen(minesweeperViewModel, navController, modifier)
         }
     }
 }
