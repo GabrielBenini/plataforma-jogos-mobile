@@ -24,7 +24,7 @@ class MinesweeperViewModel : ViewModel() {
         List(10) { x -> List(10) { y -> Cell(clicked = false, x = x, y = y) } }
     )
 
-    private fun addBombs(bombCount: Int = 20): Board {
+    private fun addBombs(bombCount: Int = 10): Board {
         val positions = mutableSetOf<Pair<Int, Int>>()
         while (positions.size < bombCount) {
             positions.add(Random.nextInt(0, 10) to Random.nextInt(0, 10))
